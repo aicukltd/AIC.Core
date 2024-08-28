@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AIC.Core.Data.MongoDb\AIC.Core.Data.MongoDb.csproj" />
+    <ProjectReference Include="..\AIC.Core.Identity.Data\AIC.Core.Identity.Data.csproj" />
+  </ItemGroup>
+
+</Project>

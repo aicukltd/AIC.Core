@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AIC.Core.Data.Extensions.Expressions\AIC.Core.Data.Extensions.Expressions.csproj" />
+    <ProjectReference Include="..\AIC.Core.Data.Models.References\AIC.Core.Data.Models.References.csproj" />
+    <ProjectReference Include="..\AIC.Core.Data\AIC.Core.Data.csproj" />
+    <ProjectReference Include="..\AIC.Core.Identity.Extensions\AIC.Core.Identity.Extensions.csproj" />
+    <ProjectReference Include="..\AIC.Core.Identity.Models\AIC.Core.Identity.Models.csproj" />
+  </ItemGroup>
+
+</Project>
