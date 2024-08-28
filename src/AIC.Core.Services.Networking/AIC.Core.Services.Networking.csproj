@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\AIC.Core.Models.Networking.Connections\AIC.Core.Models.Networking.Connections.csproj" />
+	  <ProjectReference Include="..\AIC.Core.Models.Networking\AIC.Core.Models.Networking.csproj" />
+	  <ProjectReference Include="..\AIC.Core.Services.Networking.Connections.Provisioning\AIC.Core.Services.Networking.Connections.Provisioning.csproj" />
+	  <ProjectReference Include="..\AIC.Core.Services.Networking.Connections\AIC.Core.Services.Networking.Connections.csproj" />
+	  <ProjectReference Include="..\AIC.Core.Services\AIC.Core.Services.csproj" />
+	</ItemGroup>
+
+</Project>

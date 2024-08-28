@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+	<ItemGroup>
+	  <Folder Include="Extensions\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="BouncyCastle.Cryptography" Version="2.4.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\AIC.Core.Extensions\AIC.Core.Extensions.csproj" />
+	  <ProjectReference Include="..\AIC.Core.Security.Cryptography.Symmetric\AIC.Core.Security.Cryptography.Symmetric.csproj" />
+	  <ProjectReference Include="..\AIC.Core.Security.Cryptography\AIC.Core.Security.Cryptography.csproj" />
+	</ItemGroup>
+
+</Project>

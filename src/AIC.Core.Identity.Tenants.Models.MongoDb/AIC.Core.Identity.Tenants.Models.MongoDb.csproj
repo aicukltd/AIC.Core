@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MongoDbGenericRepository" Version="1.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AIC.Core.Data.MongoDb\AIC.Core.Data.MongoDb.csproj" />
+    <ProjectReference Include="..\AIC.Core.Identity.Tenants.Models\AIC.Core.Identity.Tenants.Models.csproj" />
+  </ItemGroup>
+
+</Project>

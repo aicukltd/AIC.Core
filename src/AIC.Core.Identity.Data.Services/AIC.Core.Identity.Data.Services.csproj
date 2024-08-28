@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AIC.Core.Data.Services\AIC.Core.Data.Services.csproj" />
+    <ProjectReference Include="..\AIC.Core.Data\AIC.Core.Data.csproj" />
+    <ProjectReference Include="..\AIC.Core.Identity.Models\AIC.Core.Identity.Models.csproj" />
+    <ProjectReference Include="..\AIC.Core.Identity.Subscriptions.Models\AIC.Core.Identity.Subscriptions.Models.csproj" />
+    <ProjectReference Include="..\AIC.Core.Identity.Tenants.Models\AIC.Core.Identity.Tenants.Models.csproj" />
+  </ItemGroup>
+
+</Project>

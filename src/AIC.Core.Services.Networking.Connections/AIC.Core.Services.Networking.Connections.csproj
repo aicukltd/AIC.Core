@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Options" Version="8.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AIC.Core.Delegates.Networking\AIC.Core.Delegates.Networking.csproj" />
+    <ProjectReference Include="..\AIC.Core.Models.Networking.Connections\AIC.Core.Models.Networking.Connections.csproj" />
+    <ProjectReference Include="..\AIC.Core.Models.Networking\AIC.Core.Models.Networking.csproj" />
+  </ItemGroup>
+
+</Project>
