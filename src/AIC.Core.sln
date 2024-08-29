@@ -161,6 +161,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Models", "Models", "{E9C263
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AIC.Core.Models", "AIC.Core.Models\AIC.Core.Models.csproj", "{99DE75D0-FB97-4F99-BC15-6541D0BDB9BE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIC.Core.Security.Cryptography.Asymmetric.Certificates.Quantum.BouncyCastle.Tests", "AIC.Core.Security.Cryptography.Asymmetric.Certificates.Quantum.BouncyCastle.Tests\AIC.Core.Security.Cryptography.Asymmetric.Certificates.Quantum.BouncyCastle.Tests.csproj", "{E6D271D9-C605-4AFB-A21E-0696E85E6601}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIC.Core.Security.Cryptography.Asymmetric.RSA.Tests", "AIC.Core.Security.Cryptography.Asymmetric.RSA.Tests\AIC.Core.Security.Cryptography.Asymmetric.RSA.Tests.csproj", "{A56CC98C-053B-4F83-A2CC-8A54DA743980}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIC.Core.Security.Cryptography.Hashing.BouncyCastle.Tests", "AIC.Core.Security.Cryptography.Hashing.BouncyCastle.Tests\AIC.Core.Security.Cryptography.Hashing.BouncyCastle.Tests.csproj", "{59A17F73-5FE1-4793-B049-3AB12A4995EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIC.Core.Security.Cryptography.Hashing.Extensions.Tests", "AIC.Core.Security.Cryptography.Hashing.Extensions.Tests\AIC.Core.Security.Cryptography.Hashing.Extensions.Tests.csproj", "{3B5E0561-5DD9-4168-B8AE-5AFBF4D81C31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIC.Core.Security.Cryptography.Symmetric.AES.Tests", "AIC.Core.Security.Cryptography.Symmetric.AES.Tests\AIC.Core.Security.Cryptography.Symmetric.AES.Tests.csproj", "{F0C528F6-B618-41A8-AD28-2EB3C19A7531}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -431,6 +441,26 @@ Global
 		{99DE75D0-FB97-4F99-BC15-6541D0BDB9BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99DE75D0-FB97-4F99-BC15-6541D0BDB9BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99DE75D0-FB97-4F99-BC15-6541D0BDB9BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6D271D9-C605-4AFB-A21E-0696E85E6601}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6D271D9-C605-4AFB-A21E-0696E85E6601}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6D271D9-C605-4AFB-A21E-0696E85E6601}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6D271D9-C605-4AFB-A21E-0696E85E6601}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A56CC98C-053B-4F83-A2CC-8A54DA743980}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A56CC98C-053B-4F83-A2CC-8A54DA743980}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A56CC98C-053B-4F83-A2CC-8A54DA743980}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A56CC98C-053B-4F83-A2CC-8A54DA743980}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59A17F73-5FE1-4793-B049-3AB12A4995EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59A17F73-5FE1-4793-B049-3AB12A4995EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59A17F73-5FE1-4793-B049-3AB12A4995EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59A17F73-5FE1-4793-B049-3AB12A4995EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B5E0561-5DD9-4168-B8AE-5AFBF4D81C31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B5E0561-5DD9-4168-B8AE-5AFBF4D81C31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B5E0561-5DD9-4168-B8AE-5AFBF4D81C31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B5E0561-5DD9-4168-B8AE-5AFBF4D81C31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0C528F6-B618-41A8-AD28-2EB3C19A7531}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0C528F6-B618-41A8-AD28-2EB3C19A7531}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0C528F6-B618-41A8-AD28-2EB3C19A7531}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0C528F6-B618-41A8-AD28-2EB3C19A7531}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -503,6 +533,11 @@ Global
 		{7534CB24-27F1-4820-B42F-0DBB9759FEA3} = {71242E06-BD07-488C-956D-52AA324580C0}
 		{87D53FEF-7D73-44CD-A348-F9FC92A07B8D} = {71242E06-BD07-488C-956D-52AA324580C0}
 		{99DE75D0-FB97-4F99-BC15-6541D0BDB9BE} = {E9C263B5-8AB6-411D-9C17-05826ECB1EC2}
+		{E6D271D9-C605-4AFB-A21E-0696E85E6601} = {EA1F6575-140B-412E-A501-6B6163A1885A}
+		{A56CC98C-053B-4F83-A2CC-8A54DA743980} = {EA1F6575-140B-412E-A501-6B6163A1885A}
+		{59A17F73-5FE1-4793-B049-3AB12A4995EC} = {EA1F6575-140B-412E-A501-6B6163A1885A}
+		{3B5E0561-5DD9-4168-B8AE-5AFBF4D81C31} = {EA1F6575-140B-412E-A501-6B6163A1885A}
+		{F0C528F6-B618-41A8-AD28-2EB3C19A7531} = {EA1F6575-140B-412E-A501-6B6163A1885A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FDF635A2-58C3-413A-98A6-9578AB7E4671}
