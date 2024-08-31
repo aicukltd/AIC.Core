@@ -187,6 +187,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{2A286146-C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIC.Core.Data.CosmosDb.Tests", "AIC.Core.Data.CosmosDb.Tests\AIC.Core.Data.CosmosDb.Tests.csproj", "{D4D77158-CF48-4942-A68B-DB8079448EA1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIC.Core.Security.Cryptography.Streams", "AIC.Core.Security.Cryptography.Streams\AIC.Core.Security.Cryptography.Streams.csproj", "{0D73A9B7-D7A8-4B30-95DC-A7E61344C5C1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -501,6 +503,10 @@ Global
 		{D4D77158-CF48-4942-A68B-DB8079448EA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4D77158-CF48-4942-A68B-DB8079448EA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4D77158-CF48-4942-A68B-DB8079448EA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D73A9B7-D7A8-4B30-95DC-A7E61344C5C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D73A9B7-D7A8-4B30-95DC-A7E61344C5C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D73A9B7-D7A8-4B30-95DC-A7E61344C5C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D73A9B7-D7A8-4B30-95DC-A7E61344C5C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -586,6 +592,7 @@ Global
 		{C99AD30C-6ABB-4B7F-A326-54BD3C0E4865} = {C4531B43-B907-4879-B40B-3A65B5B4F223}
 		{2A286146-CFBF-4E5A-9F10-C21B12E5C9E1} = {0077143C-F632-4B4E-BF4B-44370EF378B6}
 		{D4D77158-CF48-4942-A68B-DB8079448EA1} = {2A286146-CFBF-4E5A-9F10-C21B12E5C9E1}
+		{0D73A9B7-D7A8-4B30-95DC-A7E61344C5C1} = {DBC0596F-7E58-4DBA-90BC-854683C1AC30}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FDF635A2-58C3-413A-98A6-9578AB7E4671}
