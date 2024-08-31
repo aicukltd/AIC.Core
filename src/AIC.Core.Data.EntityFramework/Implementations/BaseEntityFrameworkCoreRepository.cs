@@ -623,7 +623,7 @@ public abstract class BaseEntityFrameworkCoreRepository<TEntity, TId, TDbo> :
     /// <exception cref="NotImplementedException"></exception>
     public async Task<TEntity> CreateOrUpdateAsync(TEntity entity)
     {
-        var exists = await this.CountAsync(x => Equals(x.Id, entity.Id)) > 0;
+        var exists = await this.CountAsync(x => object.Equals(x.Id, entity.Id)) > 0;
 
         if (exists) return await this.UpdateAsync(entity);
 

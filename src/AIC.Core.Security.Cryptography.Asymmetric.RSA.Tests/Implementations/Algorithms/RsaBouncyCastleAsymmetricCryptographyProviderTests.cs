@@ -1,103 +1,125 @@
 ﻿namespace AIC.Core.Security.Cryptography.Asymmetric.RSA.Tests.Implementations.Algorithms;
 
 using NUnit.Framework;
+using Org.BouncyCastle.Crypto;
+using Org.BouncyCastle.Security;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
+using AIC.Core.Security.Cryptography.Asymmetric.Extensions;
+using Newtonsoft.Json;
+using AIC.Core.Security.Cryptography.Asymmetric.Implementations;
+using AIC.Core.Security.Cryptography.Asymmetric.RSA.Implementations.Algorithms;
 
 [TestFixture]
 public class RsaBouncyCastleAsymmetricCryptographyProviderTests
 {
-    [Test]
-    public void GenerateKeyPairTest()
+    private RsaBouncyCastleAsymmetricCryptographyProvider provider;
+
+    [SetUp]
+    public void SetUp()
     {
-        Assert.Fail();
+        this.provider = new RsaBouncyCastleAsymmetricCryptographyProvider();
     }
 
     [Test]
-    public void GenerateKeyPairTest1()
+    public void GenerateKeyPair_WithValidKeySize_ShouldReturnValidJsonKeyPair()
     {
-        Assert.Fail();
+        // Arrange
+        var keySize = 2048;
+
+        // Act
+        var (privateKeyJson, publicKeyJson) = this.provider.GenerateKeyPair(keySize);
+
+        // Assert
+        Assert.IsNotNull(privateKeyJson);
+        Assert.IsNotNull(publicKeyJson);
+
+        var privateKeyParameters = JsonConvert.DeserializeObject<AsymmetricPrivateKeyParameters>(privateKeyJson);
+        var publicKeyParameters = JsonConvert.DeserializeObject<AsymmetricPublicKeyParameters>(publicKeyJson);
+
+        Assert.IsNotNull(privateKeyParameters);
+        Assert.IsNotNull(publicKeyParameters);
     }
 
     [Test]
-    public void GenerateKeyPairTest2()
+    public void Encrypt_WithValidPublicKey_ShouldReturnEncryptedBase64String()
     {
-        Assert.Fail();
+        // Arrange
+        var keySize = 2048;
+        var (_, publicKeyJson) = this.provider.GenerateKeyPair(keySize);
+        var plainText = "Hello, RSA with BouncyCastle!";
+
+        // Act
+        var encryptedData = this.provider.Encrypt(plainText, publicKeyJson);
+
+        // Assert
+        Assert.IsNotNull(encryptedData);
+        Assert.IsTrue(Convert.FromBase64String(encryptedData).Length > 0);
     }
 
     [Test]
-    public void GenerateKeyPairTest3()
+    public void Decrypt_WithValidPrivateKey_ShouldReturnOriginalPlainText()
     {
-        Assert.Fail();
+        // Arrange
+        var keySize = 2048;
+        var (privateKeyJson, publicKeyJson) = this.provider.GenerateKeyPair(keySize);
+        var plainText = "Hello, RSA with BouncyCastle!";
+        var encryptedData = this.provider.Encrypt(plainText, publicKeyJson);
+
+        // Act
+        var decryptedData = this.provider.Decrypt(encryptedData, privateKeyJson);
+
+        // Assert
+        Assert.AreEqual(plainText, decryptedData);
     }
 
     [Test]
-    public void EncryptTest()
+    public void Sign_WithValidPrivateKey_ShouldReturnValidSignature()
     {
-        Assert.Fail();
+        // Arrange
+        var keySize = 2048;
+        var (privateKeyJson, _) = this.provider.GenerateKeyPair(keySize);
+        var dataToSign = "Sign this data using RSA and BouncyCastle";
+
+        // Act
+        var signature = this.provider.Sign(dataToSign, privateKeyJson);
+
+        // Assert
+        Assert.IsNotNull(signature);
+        Assert.IsTrue(Convert.FromBase64String(signature).Length > 0);
     }
 
     [Test]
-    public void DecryptTest()
+    public void Verify_WithValidSignature_ShouldReturnTrue()
     {
-        Assert.Fail();
+        // Arrange
+        var keySize = 2048;
+        var (privateKeyJson, publicKeyJson) = this.provider.GenerateKeyPair(keySize);
+        var dataToSign = "Verify this data using RSA and BouncyCastle";
+        var signature = this.provider.Sign(dataToSign, privateKeyJson);
+
+        // Act
+        var isVerified = this.provider.Verify(dataToSign, signature, publicKeyJson);
+
+        // Assert
+        Assert.IsTrue(isVerified);
     }
 
     [Test]
-    public void EncryptTest1()
+    public void Verify_WithInvalidSignature_ShouldReturnFalse()
     {
-        Assert.Fail();
-    }
+        // Arrange
+        var keySize = 2048;
+        var (_, publicKeyJson) = this.provider.GenerateKeyPair(keySize);
+        var dataToSign = "Verify this data using RSA and BouncyCastle";
+        var invalidSignature = Convert.ToBase64String(Encoding.UTF8.GetBytes("InvalidSignature"));
 
-    [Test]
-    public void DecryptTest1()
-    {
-        Assert.Fail();
-    }
+        // Act
+        var isVerified = this.provider.Verify(dataToSign, invalidSignature, publicKeyJson);
 
-    [Test]
-    public void EncryptTest2()
-    {
-        Assert.Fail();
-    }
-
-    [Test]
-    public void DecryptTest2()
-    {
-        Assert.Fail();
-    }
-
-    [Test]
-    public void SignTest()
-    {
-        Assert.Fail();
-    }
-
-    [Test]
-    public void SignTest1()
-    {
-        Assert.Fail();
-    }
-
-    [Test]
-    public void VerifyTest()
-    {
-        Assert.Fail();
-    }
-
-    [Test]
-    public void VerifyTest1()
-    {
-        Assert.Fail();
-    }
-
-    [Test]
-    public void SignTest2()
-    {
-        Assert.Fail();
-    }
-
-    [Test]
-    public void VerifyTest2()
-    {
-        Assert.Fail();
+        // Assert
+        Assert.IsFalse(isVerified);
     }
 }

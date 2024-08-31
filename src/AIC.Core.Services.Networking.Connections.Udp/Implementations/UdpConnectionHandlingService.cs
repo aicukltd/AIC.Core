@@ -23,7 +23,7 @@ public sealed class UdpConnectionHandlingService : BaseConnectionHandlingService
             this.ConnectionInformation.Port);
         this.udpClient = new UdpClient(this.remoteEndPoint);
 
-        _ = Task.Run(this.ListenForDataAsync, base.CancellationTokenSource.Token);
+        _ = Task.Run(this.ListenForDataAsync, this.CancellationTokenSource.Token);
     }
 
     protected override async Task DisconnectInternalAsync()
@@ -62,7 +62,7 @@ public sealed class UdpConnectionHandlingService : BaseConnectionHandlingService
 
     private async Task ListenForDataAsync()
     {
-        while (this.udpClient != null && !base.CancellationTokenSource.IsCancellationRequested)
+        while (this.udpClient != null && !this.CancellationTokenSource.IsCancellationRequested)
         {
             try
             {
