@@ -161,27 +161,31 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Models", "Models", "{E9C263
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AIC.Core.Models", "AIC.Core.Models\AIC.Core.Models.csproj", "{99DE75D0-FB97-4F99-BC15-6541D0BDB9BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIC.Core.Security.Cryptography.Asymmetric.Certificates.Quantum.BouncyCastle.Tests", "AIC.Core.Security.Cryptography.Asymmetric.Certificates.Quantum.BouncyCastle.Tests\AIC.Core.Security.Cryptography.Asymmetric.Certificates.Quantum.BouncyCastle.Tests.csproj", "{E6D271D9-C605-4AFB-A21E-0696E85E6601}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AIC.Core.Security.Cryptography.Asymmetric.Certificates.Quantum.BouncyCastle.Tests", "AIC.Core.Security.Cryptography.Asymmetric.Certificates.Quantum.BouncyCastle.Tests\AIC.Core.Security.Cryptography.Asymmetric.Certificates.Quantum.BouncyCastle.Tests.csproj", "{E6D271D9-C605-4AFB-A21E-0696E85E6601}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIC.Core.Security.Cryptography.Asymmetric.RSA.Tests", "AIC.Core.Security.Cryptography.Asymmetric.RSA.Tests\AIC.Core.Security.Cryptography.Asymmetric.RSA.Tests.csproj", "{A56CC98C-053B-4F83-A2CC-8A54DA743980}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AIC.Core.Security.Cryptography.Asymmetric.RSA.Tests", "AIC.Core.Security.Cryptography.Asymmetric.RSA.Tests\AIC.Core.Security.Cryptography.Asymmetric.RSA.Tests.csproj", "{A56CC98C-053B-4F83-A2CC-8A54DA743980}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIC.Core.Security.Cryptography.Hashing.BouncyCastle.Tests", "AIC.Core.Security.Cryptography.Hashing.BouncyCastle.Tests\AIC.Core.Security.Cryptography.Hashing.BouncyCastle.Tests.csproj", "{59A17F73-5FE1-4793-B049-3AB12A4995EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AIC.Core.Security.Cryptography.Hashing.BouncyCastle.Tests", "AIC.Core.Security.Cryptography.Hashing.BouncyCastle.Tests\AIC.Core.Security.Cryptography.Hashing.BouncyCastle.Tests.csproj", "{59A17F73-5FE1-4793-B049-3AB12A4995EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIC.Core.Security.Cryptography.Hashing.Extensions.Tests", "AIC.Core.Security.Cryptography.Hashing.Extensions.Tests\AIC.Core.Security.Cryptography.Hashing.Extensions.Tests.csproj", "{3B5E0561-5DD9-4168-B8AE-5AFBF4D81C31}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AIC.Core.Security.Cryptography.Hashing.Extensions.Tests", "AIC.Core.Security.Cryptography.Hashing.Extensions.Tests\AIC.Core.Security.Cryptography.Hashing.Extensions.Tests.csproj", "{3B5E0561-5DD9-4168-B8AE-5AFBF4D81C31}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIC.Core.Security.Cryptography.Symmetric.AES.Tests", "AIC.Core.Security.Cryptography.Symmetric.AES.Tests\AIC.Core.Security.Cryptography.Symmetric.AES.Tests.csproj", "{F0C528F6-B618-41A8-AD28-2EB3C19A7531}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AIC.Core.Security.Cryptography.Symmetric.AES.Tests", "AIC.Core.Security.Cryptography.Symmetric.AES.Tests\AIC.Core.Security.Cryptography.Symmetric.AES.Tests.csproj", "{F0C528F6-B618-41A8-AD28-2EB3C19A7531}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIC.Core.Services.Networking.Tests", "AIC.Core.Services.Networking.Tests\AIC.Core.Services.Networking.Tests.csproj", "{2320499D-86AD-4C08-A624-5795FEF36019}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AIC.Core.Services.Networking.Tests", "AIC.Core.Services.Networking.Tests\AIC.Core.Services.Networking.Tests.csproj", "{2320499D-86AD-4C08-A624-5795FEF36019}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Networking", "Networking", "{C4531B43-B907-4879-B40B-3A65B5B4F223}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIC.Core.Services.Networking.Connections.Provisioning.Tests", "AIC.Core.Services.Networking.Connections.Provisioning.Tests\AIC.Core.Services.Networking.Connections.Provisioning.Tests.csproj", "{653AA323-E909-4B1C-91EF-991E9B3323EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AIC.Core.Services.Networking.Connections.Provisioning.Tests", "AIC.Core.Services.Networking.Connections.Provisioning.Tests\AIC.Core.Services.Networking.Connections.Provisioning.Tests.csproj", "{653AA323-E909-4B1C-91EF-991E9B3323EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIC.Core.Services.Networking.Connections.Serial.Tests", "AIC.Core.Services.Networking.Connections.Serial.Tests\AIC.Core.Services.Networking.Connections.Serial.Tests.csproj", "{14521031-BA06-4C57-B8B8-D07430FA222F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AIC.Core.Services.Networking.Connections.Serial.Tests", "AIC.Core.Services.Networking.Connections.Serial.Tests\AIC.Core.Services.Networking.Connections.Serial.Tests.csproj", "{14521031-BA06-4C57-B8B8-D07430FA222F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIC.Core.Services.Networking.Connections.Tcp.Tests", "AIC.Core.Services.Networking.Connections.Tcp.Tests\AIC.Core.Services.Networking.Connections.Tcp.Tests.csproj", "{D9C4B6EB-77F9-4CAA-B87E-D166FA96D51D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AIC.Core.Services.Networking.Connections.Tcp.Tests", "AIC.Core.Services.Networking.Connections.Tcp.Tests\AIC.Core.Services.Networking.Connections.Tcp.Tests.csproj", "{D9C4B6EB-77F9-4CAA-B87E-D166FA96D51D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIC.Core.Services.Networking.Connections.Udp.Tests", "AIC.Core.Services.Networking.Connections.Udp.Tests\AIC.Core.Services.Networking.Connections.Udp.Tests.csproj", "{C99AD30C-6ABB-4B7F-A326-54BD3C0E4865}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AIC.Core.Services.Networking.Connections.Udp.Tests", "AIC.Core.Services.Networking.Connections.Udp.Tests\AIC.Core.Services.Networking.Connections.Udp.Tests.csproj", "{C99AD30C-6ABB-4B7F-A326-54BD3C0E4865}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{2A286146-CFBF-4E5A-9F10-C21B12E5C9E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIC.Core.Data.CosmosDb.Tests", "AIC.Core.Data.CosmosDb.Tests\AIC.Core.Data.CosmosDb.Tests.csproj", "{D4D77158-CF48-4942-A68B-DB8079448EA1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -493,6 +497,10 @@ Global
 		{C99AD30C-6ABB-4B7F-A326-54BD3C0E4865}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C99AD30C-6ABB-4B7F-A326-54BD3C0E4865}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C99AD30C-6ABB-4B7F-A326-54BD3C0E4865}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4D77158-CF48-4942-A68B-DB8079448EA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4D77158-CF48-4942-A68B-DB8079448EA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4D77158-CF48-4942-A68B-DB8079448EA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4D77158-CF48-4942-A68B-DB8079448EA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -576,6 +584,8 @@ Global
 		{14521031-BA06-4C57-B8B8-D07430FA222F} = {C4531B43-B907-4879-B40B-3A65B5B4F223}
 		{D9C4B6EB-77F9-4CAA-B87E-D166FA96D51D} = {C4531B43-B907-4879-B40B-3A65B5B4F223}
 		{C99AD30C-6ABB-4B7F-A326-54BD3C0E4865} = {C4531B43-B907-4879-B40B-3A65B5B4F223}
+		{2A286146-CFBF-4E5A-9F10-C21B12E5C9E1} = {0077143C-F632-4B4E-BF4B-44370EF378B6}
+		{D4D77158-CF48-4942-A68B-DB8079448EA1} = {2A286146-CFBF-4E5A-9F10-C21B12E5C9E1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FDF635A2-58C3-413A-98A6-9578AB7E4671}
