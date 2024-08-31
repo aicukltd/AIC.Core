@@ -8,14 +8,6 @@ using AIC.Core.Security.Cryptography.Asymmetric.Quantum.BouncyCastle.Contracts;
 
 public class DilithiumAsymmetricCertificateProvider : IDilithiumAsymmetricCertificateProvider
 {
-    private readonly IDilithiumAsymmetricCryptographyProvider dilithiumAsymmetricCryptographyProvider;
-
-    public DilithiumAsymmetricCertificateProvider(
-        IDilithiumAsymmetricCryptographyProvider dilithiumAsymmetricCryptographyProvider)
-    {
-        this.dilithiumAsymmetricCryptographyProvider = dilithiumAsymmetricCryptographyProvider;
-    }
-
     public async Task<IX509Certificate3> FromCertificateAsync(X509Certificate2 certificate)
     {
         var certificateFacade = new X509Certificate3Facade
