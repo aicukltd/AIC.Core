@@ -4,7 +4,7 @@ using Org.BouncyCastle.Pqc.Crypto.Crystals.Dilithium;
 using Org.BouncyCastle.Pqc.Crypto.Utilities;
 using Org.BouncyCastle.Security;
 
-public class DilithiumAsymmetricCryptographyProvider : BaseAsymmetricCryptographyProvider<DilithiumKeyPairGenerator>
+public class DilithiumAsymmetricCryptographyProvider : BaseAsymmetricCryptographyProvider<DilithiumKeyPairGenerator>,IDilithiumAsymmetricCryptographyProvider
 {
     public override (byte[] privateKeyParameters, byte[] publicKeyParameters) GenerateKeyPair()
     {
