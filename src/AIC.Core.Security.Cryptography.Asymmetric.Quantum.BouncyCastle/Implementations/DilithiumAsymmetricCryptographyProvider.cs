@@ -1,10 +1,11 @@
 ﻿namespace AIC.Core.Security.Cryptography.Asymmetric.Quantum.BouncyCastle.Implementations;
 
+using AIC.Core.Security.Cryptography.Asymmetric.Quantum.BouncyCastle.Contracts;
 using Org.BouncyCastle.Pqc.Crypto.Crystals.Dilithium;
 using Org.BouncyCastle.Pqc.Crypto.Utilities;
 using Org.BouncyCastle.Security;
 
-public class DilithiumAsymmetricCryptographyProvider : BaseAsymmetricCryptographyProvider<DilithiumKeyPairGenerator>,IDilithiumAsymmetricCryptographyProvider
+public class DilithiumAsymmetricCryptographyProvider : BaseAsymmetricCryptographyProvider<DilithiumKeyPairGenerator>, IDilithiumAsymmetricCryptographyProvider
 {
     public override (byte[] privateKeyParameters, byte[] publicKeyParameters) GenerateKeyPair()
     {
