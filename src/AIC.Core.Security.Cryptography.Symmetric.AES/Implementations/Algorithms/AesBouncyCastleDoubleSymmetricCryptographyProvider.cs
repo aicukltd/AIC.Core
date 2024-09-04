@@ -15,7 +15,7 @@ public class AesBouncyCastleDoubleSymmetricCryptographyProvider : IDoubleSymmetr
         this.secondaryCryptographyProvider = secondaryCryptographyProvider;
     }
 
-    public byte[] Encrypt(byte[] data, byte[] primaryKey, byte[] secondaryKey, byte[] primaryIv, byte[] secondaryIv)
+    public byte[] Encrypt(byte[] data, byte[] primaryKey, byte[] secondaryKey, byte[] primaryIv = null, byte[] secondaryIv = null)
     {
         var primaryCipherResult = this.primaryCryptographyProvider.Encrypt(data, primaryKey, primaryIv);
         var secondaryCipherResult =
@@ -23,7 +23,7 @@ public class AesBouncyCastleDoubleSymmetricCryptographyProvider : IDoubleSymmetr
         return secondaryCipherResult;
     }
 
-    public byte[] Decrypt(byte[] data, byte[] primaryKey, byte[] secondaryKey, byte[] primaryIv, byte[] secondaryIv)
+    public byte[] Decrypt(byte[] data, byte[] primaryKey, byte[] secondaryKey, byte[] primaryIv = null, byte[] secondaryIv = null)
     {
         var primaryCipherResult = this.primaryCryptographyProvider.Decrypt(data, primaryKey, primaryIv);
         var secondaryCipherResult =
