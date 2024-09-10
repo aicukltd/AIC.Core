@@ -56,7 +56,7 @@ public class DilithiumAsymmetricCryptographyProvider : BaseAsymmetricCryptograph
 
         var dilithiumKeyGenerationParameters = new DilithiumKeyGenerationParameters(
             new SecureRandom(),
-            DilithiumParameters.Dilithium5Aes
+            DilithiumParameters.Dilithium5
         );
 
         dilithiumKeyPairGenerator.Init(dilithiumKeyGenerationParameters);

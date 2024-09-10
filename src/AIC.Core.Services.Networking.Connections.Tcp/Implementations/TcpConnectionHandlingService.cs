@@ -21,7 +21,7 @@ public sealed class TcpConnectionHandlingService : BaseConnectionHandlingService
 
     protected override async Task ConnectInternalAsync()
     {
-        switch (base.ConnectionInformation.Mode)
+        switch (this.ConnectionInformation.Mode)
         {
             case ConnectionInformationMode.Client:
                 await this.SetupHandlerAsClient();
@@ -49,12 +49,12 @@ public sealed class TcpConnectionHandlingService : BaseConnectionHandlingService
 
     private string GetLoggingPrefix()
     {
-        return $"TCP [{base.ConnectionInformation.Mode}]";
+        return $"TCP [{this.ConnectionInformation.Mode}]";
     }
 
     private async Task SetupHandlerAsServer()
     {
-        this.tcpListener = new TcpListener(IPAddress.Parse(base.ConnectionInformation.Host),
+        this.tcpListener = new TcpListener(IPAddress.Parse(this.ConnectionInformation.Host),
             this.ConnectionInformation.Port);
 
         this.tcpListener.Start();
@@ -123,7 +123,7 @@ public sealed class TcpConnectionHandlingService : BaseConnectionHandlingService
 
     protected override async Task SendCommandInternalAsync(INetworkCommand networkCommand)
     {
-        switch (base.ConnectionInformation.Mode)
+        switch (this.ConnectionInformation.Mode)
         {
             case ConnectionInformationMode.Client:
                 await this.SendCommandToServer(networkCommand);

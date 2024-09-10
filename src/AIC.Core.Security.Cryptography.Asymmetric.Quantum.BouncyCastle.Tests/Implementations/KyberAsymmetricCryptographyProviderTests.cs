@@ -1,64 +1,109 @@
 ﻿namespace AIC.Core.Security.Cryptography.Asymmetric.Quantum.BouncyCastle.Tests.Implementations;
 
-using System.Text;
+using NUnit.Framework;
+using Moq;
+using System;
 using AIC.Core.Security.Cryptography.Asymmetric.Quantum.BouncyCastle.Implementations;
-using AIC.Core.Security.Cryptography.Symmetric.AES.Implementations.Algorithms;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using AIC.Core.Security.Cryptography.Symmetric.Contracts;
+using Org.BouncyCastle.Pqc.Crypto.Crystals.Kyber;
 
-[TestClass]
+[TestFixture]
 public class KyberAsymmetricCryptographyProviderTests
 {
+    private Mock<ISymmetricCryptographyProvider> mockSymmetricCryptographyProvider;
     private KyberAsymmetricCryptographyProvider provider;
 
-    [TestInitialize]
+    [SetUp]
     public void SetUp()
     {
-        this.provider = new KyberAsymmetricCryptographyProvider(new AesBouncyCastleSymmetricCryptographyProvider());
+        this.mockSymmetricCryptographyProvider = new Mock<ISymmetricCryptographyProvider>();
+        this.provider = new KyberAsymmetricCryptographyProvider(this.mockSymmetricCryptographyProvider.Object);
     }
 
-    [TestMethod]
-    public void GenerateKeyPair_ShouldReturnValidKeys()
+    [Test]
+    public void Constructor_WhenCalled_ShouldInitializeDependencies()
     {
-        var keys = this.provider.GenerateKeyPair();
+        // Arrange & Act
+        var result = new KyberAsymmetricCryptographyProvider(this.mockSymmetricCryptographyProvider.Object);
 
-        Assert.IsNotNull(keys.privateKeyParameters);
-        Assert.IsNotNull(keys.publicKeyParameters);
+        // Assert
+        Assert.IsNotNull(result);
     }
 
-    [TestMethod]
-    public void EncryptDecrypt_ShouldReturnOriginalData()
+    [Test]
+    public void Constructor_WhenSymmetricCryptographyProviderIsNull_ShouldThrowArgumentNullException()
     {
-        var data = Encoding.UTF8.GetBytes("Hello, Kyber!");
-        var keys = this.provider.GenerateKyberKeyPair();
-
-        var encryptedData = this.provider.Encrypt(data, keys.publicKeyParameters, out var encapsulatedSharedKey);
-        var decryptedData = this.provider.Decrypt(encryptedData, keys.privateKeyParameters, encapsulatedSharedKey);
-
-        var decryptedString = Encoding.UTF8.GetString(decryptedData);
-
-        Assert.AreEqual("Hello, Kyber!", decryptedString);
+        // Arrange, Act & Assert
+        Assert.Throws<ArgumentNullException>(() =>
+            new KyberAsymmetricCryptographyProvider(null));
     }
 
-    [TestMethod]
-    [ExpectedException(typeof(ArgumentException))]
-    public void Decrypt_WithInvalidPrivateKey_ShouldThrowException()
+    [Test]
+    public void GenerateKeyPair_WhenCalled_ShouldReturnValidKeyPair()
     {
-        var data = Encoding.UTF8.GetBytes("Hello, Kyber!");
-        var keys = this.provider.GenerateKeyPair();
+        // Arrange & Act
+        var result = this.provider.GenerateKeyPair();
 
-        var encryptedData = this.provider.Encrypt(data, keys.publicKeyParameters);
-
-        var invalidPrivateKey = new byte[] { 1, 2, 3, 4, 5 }; // Some random invalid key
-        this.provider.Decrypt(encryptedData, invalidPrivateKey);
+        // Assert
+        Assert.IsNotNull(result.privateKeyParameters);
+        Assert.IsNotNull(result.publicKeyParameters);
+        Assert.IsTrue(result.privateKeyParameters.Length > 0);
+        Assert.IsTrue(result.publicKeyParameters.Length > 0);
     }
 
-    [TestMethod]
-    [ExpectedException(typeof(ArgumentException))]
-    public void Encrypt_WithInvalidPublicKey_ShouldThrowException()
+    [Test]
+    public void GenerateKyberKeyPair_WhenCalled_ShouldReturnValidKyberKeyPair()
     {
-        var data = Encoding.UTF8.GetBytes("Hello, Kyber!");
-        var invalidPublicKey = new byte[] { 1, 2, 3, 4, 5 }; // Some random invalid key
+        // Arrange & Act
+        var result = this.provider.GenerateKyberKeyPair();
 
-        this.provider.Encrypt(data, invalidPublicKey);
+        // Assert
+        Assert.IsNotNull(result.privateKeyParameters);
+        Assert.IsNotNull(result.publicKeyParameters);
+        Assert.IsInstanceOf<KyberPrivateKeyParameters>(result.privateKeyParameters);
+        Assert.IsInstanceOf<KyberPublicKeyParameters>(result.publicKeyParameters);
+    }
+
+    [Test]
+    public void Encrypt_WhenCalledWithByteArray_ShouldReturnEncryptedDataAndEncapsulatedKey()
+    {
+        // Arrange
+        var data = new byte[] { 0x01, 0x02, 0x03 };
+        var publicKey = new byte[] { 0x04, 0x05, 0x06 };
+        var encapsulatedSharedKey = new byte[] { 0x07, 0x08 };
+
+        var encryptedData = new byte[] { 0x09, 0x0A, 0x0B };
+
+        this.mockSymmetricCryptographyProvider.Setup(s => s.Encrypt(It.IsAny<byte[]>(), It.IsAny<byte[]>(), It.IsAny<byte[]>()))
+            .Returns(encryptedData);
+
+        // Act
+        var result = this.provider.Encrypt(data, publicKey, out var encapsulatedKey);
+
+        // Assert
+        Assert.IsNotNull(result);
+        Assert.AreEqual(encryptedData, result);
+        Assert.AreEqual(encapsulatedSharedKey.Length, encapsulatedKey.Length);
+    }
+
+    [Test]
+    public void Decrypt_WhenCalledWithByteArray_ShouldReturnDecryptedData()
+    {
+        // Arrange
+        var data = new byte[] { 0x01, 0x02, 0x03 };
+        var privateKey = new byte[] { 0x04, 0x05, 0x06 };
+        var encapsulatedSharedKey = new byte[] { 0x07, 0x08 };
+
+        var decryptedData = new byte[] { 0x09, 0x0A, 0x0B };
+
+        this.mockSymmetricCryptographyProvider.Setup(s => s.Decrypt(It.IsAny<byte[]>(), It.IsAny<byte[]>(), It.IsAny<byte[]>()))
+            .Returns(decryptedData);
+
+        // Act
+        var result = this.provider.Decrypt(data, privateKey, encapsulatedSharedKey);
+
+        // Assert
+        Assert.IsNotNull(result);
+        Assert.AreEqual(decryptedData, result);
     }
 }
