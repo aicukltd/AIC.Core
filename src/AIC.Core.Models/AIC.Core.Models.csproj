@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AIC.Core.Data" Version="2024.2.22.1" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="Implementations\" />
   </ItemGroup>
 
